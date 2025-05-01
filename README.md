@@ -14,7 +14,8 @@ Tujuan dari proyek ini adalah agar mahasiswa dapat memahami dan menguasai dasar-
 - Integrasi dengan Backend (PHP/MySQL atau lainnya, jika ada)
 
 🧑‍💻 Kontributor
-Nama: Syahrul Setiawan
-NIM: C2C023524
-Mata Kuliah: Praktikum Pemrograman Berbasis Web
-Dosen: Basirudin Ansor, M.Kom
+
+- Nama: Syahrul Setiawan
+- NIM: C2C023524
+- Mata Kuliah: Praktikum Pemrograman Berbasis Web
+- Dosen: Basirudin Ansor, M.Kom
