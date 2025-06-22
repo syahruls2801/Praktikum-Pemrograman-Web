@@ -17,7 +17,7 @@
     <nav>
         <ul style="list-style-type: none; text-align: center; padding: 0;">
             <li style="display: inline; margin:0 15px; text-decoration: none;">
-                <a href="index.html">Home</a>
+                <a href="index.php">Home</a>
             </li>
             <li style="display: inline; margin:0 15px; text-decoration: none;">
                 <a href="#about">About</a>
@@ -29,7 +29,7 @@
                 <a href="#contact">Contact Us</a>
             </li>
             <li style="display: inline; margin:0 15px; text-decoration: none;">
-                <a href="login.html">Login</a>
+                <a href="datamahasiswa.php">Data</a>
             </li>
         </ul>
     </nav>
