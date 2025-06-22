@@ -1,4 +1,7 @@
 <?php
+    require "function.php";
+    $query = "SELECT * From mahasiswa";
+    $rows = tampildata($query); 
     //$nama = "Suripto"
     //$nama2 = "Aris";
 
@@ -7,21 +10,21 @@
 
     //echo $nama;
 
-    $koneksi = mysqli_connect("localhost","root","","informatik");
+    //$koneksi = mysqli_connect("localhost","root","","informatik");
 
-    if(!$koneksi)
-    {
-        die('Koneksi Gagal' .mysqli_connect_error());
-    }
-    else
-    {
-        echo "Koneksi berhasil!!!!"; //
-    }
+    //if(!$koneksi)
+    //{
+    //    die('Koneksi Gagal' .mysqli_connect_error());
+    //}
+    //else
+    //{
+    //    echo "Koneksi berhasil!!!!"; //
+    //}
 
-    $result = mysqli_query($koneksi,"SELECT * FROM mahasiswa");
+    //$result = mysqli_query($koneksi,"SELECT * FROM mahasiswa");
 
     // echo $result; //
-    var_dump($result); //
+    //var_dump($result); //
 
     /// Ambil data di lemari kemudian kasih ke aku caranya gini
 
@@ -30,9 +33,9 @@
     // mysqli_fetch_array()
     // mysqli_fetch_object()
 
-    $mhs = mysqli_fetch_row($result);
+    //$mhs = mysqli_fetch_row($result);
     
-    var_dump($mhs); //
+    //var_dump($mhs); //
 
 ?>
 
@@ -44,7 +47,7 @@
     <title>Data Mahasiswa</title>
 </head>
 <body>
-    <h1>Data Mahasiswa</h1>
+    <h1 align="center">Data Mahasiswa</h1>
     <nav>
         <ul style="list-style-type: none; text-align: center; padding: 0;">
             <li style="display: inline; margin:0 15px; text-decoration: none;">
@@ -66,14 +69,31 @@
     </nav>
     
     <h1>Data Mahasiswa</h1>
-    <tabel border="1" cellspacing="0" cellpadding="10px">
+    <table border="1" cellspacing="0" cellpadding="10px">
         <tr>
             <th>No</th>
+            <th>Foto</th>
             <th>Nama</th>
             <th>NIM</th>
             <th>Jurusan</th>
             <th>Alamat</th>
         </tr>
-    </tabel>
+
+        <?php $i = 1;
+        foreach ($rows as $mhs) { ?>
+            <tr>
+                <td><?= $i; ?></td>
+                <td>
+                    <img src="image/<?= $mhs['foto']; ?>" alt="<?= $mhs['nama']; ?>" width="120px" />
+                </td>
+                <td><?= $mhs["nama"]; ?></td>
+                <td><?= $mhs["nim"]; ?></td>
+                <td><?= $mhs["jurusan"]; ?></td>
+                <td><?= $mhs["alamat"]; ?></td>
+
+            </tr>
+        <?php $i++;
+        } ?>
+    </table>
 </body>
 </html>
