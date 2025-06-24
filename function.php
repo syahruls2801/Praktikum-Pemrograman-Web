@@ -19,4 +19,9 @@ function tampildata($query)
     return $rows;
 }
 
+function tambahdata($data)
+{
+    
+}
+
 ?>
