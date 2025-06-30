@@ -2,25 +2,20 @@
 
     require "function.php";
 
-    //$koneksi = mysqli_connect("localhost","root","","informatik");
+    $id = $_GET["id"];
 
-    //if(!$koneksi)
-    //{
-    //    die('Koneksi Gagal' .mysqli_connect_error());
-    //}
-    //else
-    //{
-    //    echo "Koneksi berhasil!!!!";
-    //}
+    $query = "SELECT *FROM mahasiswa WHERE id = $id";
+    
+    $mhs = tampildata($query)[0];
 
     if(isset($_POST['submit']))
     {
-        if (tambahdata($_POST) > 0 )
+        if (ubahdata($_POST, $id) > 0 )
         {
             echo "
             <script>
-                alert('Data Berhasil Ditambahkan!');
-                document.location.href='datamahasiswa.php';
+                alert('Data Berhasil Diperbaharui!');
+                document.location.href='../datamahasiswa.php';
             </script>
             ";
         }
@@ -28,8 +23,8 @@
         {
             echo "
             <script>
-                alert('Data Gagal Ditambahkan!');
-                document.location.href='datamahasiswa.php';
+                alert('Data Gagal Diperbaharui!');
+                document.location.href='../datamahasiswa.php';
             </script>
             ";
         }
@@ -48,29 +43,29 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tambah Data</title>
+    <title>Ubah Data</title>
 </head>
 <body>
-    <h1>Tambah Data Mahasiswa</h1>
+    <h1>Ubah Data Mahasiswa</h1>
 
     <div class="card mx-auto mt-4" style="width: 22rem;">
     <div class="card-body">
         <form action="" method="post" enctype="multipart/form-data">
             <div class="mb-3">
                 <label for="nama" class="form-label">Nama</label>
-                <input type="text" class="form-control" id="nama" name="nama" required>
+                <input type="text" class="form-control" id="nama" name="nama" required value="<?= $mhs ["nama"] ?>">
             </div>
             <div class="mb-3">
                 <label for="nim" class="form-label">NIM</label>
-                <input type="text" class="form-control" id="nim" name="nim" required>
+                <input type="text" class="form-control" id="nim" name="nim" required value="<?= $mhs ["nim"] ?>">
             </div>
             <div class="mb-3">
                 <label for="jurusan" class="form-label">Jurusan</label>
-                <input type="text" class="form-control" id="jurusan" name="jurusan" required>
+                <input type="text" class="form-control" id="jurusan" name="jurusan" required value="<?= $mhs ["jurusan"] ?>">
             </div>
             <div class="mb-3">
                 <label for="alamat" class="form-label">Alamat</label>
-                <input type="text" class="form-control" id="alamat" name="alamat" required>
+                <input type="text" class="form-control" id="alamat" name="alamat" required value="<?= $mhs ["alamat"] ?>">
             </div>
             <div class="mb-3">
                 <label for="foto" class="form-label">Upload Foto</label>

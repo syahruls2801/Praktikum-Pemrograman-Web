@@ -63,7 +63,7 @@
                 <a href="#contact">Contact Us</a>
             </li>
             <li style="display: inline; margin:0 15px; text-decoration: none;">
-                <a href="datamasiswa.php">Data</a>
+                <a href="datamahasiswa.php">Data</a>
             </li>
         </ul>
     </nav>
@@ -97,7 +97,7 @@
                 <td><?= $mhs["jurusan"]; ?></td>
                 <td><?= $mhs["alamat"]; ?></td>
                 <td>
-                    <a href="hapusdata.php/?id=<?=$mhs["id"] ?>"> Hapus</a> |
+                    <a href="hapusdata.php/?id=<?=$mhs["id"] ?>"  onclick="return confirm('Yaquuueeenn?')"> Hapus</a> |
                     <a href="ubahdata.php/?id=<?=$mhs["id"] ?>"> Edit</a>
                 </td>
 
