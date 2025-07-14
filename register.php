@@ -6,11 +6,25 @@
     {
         $message = register($_POST);
 
-        echo "
+        if($message === "Register Berhasil")
+        {
+            echo "
             <script>
                 alert('". addslashes($message) . "');
+                document.location.href = 'login.php';
             </script>
         ";
+        }
+        else
+        {
+            echo "
+            <script>
+                alert('". addslashes($message) . "');
+                document.location.href = 'register.php';
+            </script>
+        ";
+        }
+
     }
 
 

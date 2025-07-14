@@ -1,4 +1,12 @@
 <?php
+    session_start();
+
+    if(!isset($_SESSION["login"]))
+    {
+        header("Location: login.php");
+        exit;
+    }
+
     require "function.php";
     $query = "SELECT * From mahasiswa";
     $rows = tampildata($query); 
@@ -61,6 +69,9 @@
             </li>
             <li style="display: inline; margin:0 15px; text-decoration: none;">
                 <a href="#contact">Contact Us</a>
+            </li>
+            <li style="display: inline; margin:0 15px; text-decoration: none;">
+                <a href="logout.php">Log Out</a>
             </li>
             <li style="display: inline; margin:0 15px; text-decoration: none;">
                 <a href="datamahasiswa.php">Data</a>

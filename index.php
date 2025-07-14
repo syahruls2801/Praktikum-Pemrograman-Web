@@ -29,6 +29,9 @@
                 <a href="#contact">Contact Us</a>
             </li>
             <li style="display: inline; margin:0 15px; text-decoration: none;">
+                <a href="login.php">Login</a>
+            </li>
+            <li style="display: inline; margin:0 15px; text-decoration: none;">
                 <a href="datamahasiswa.php">Data</a>
             </li>
         </ul>
